@@ -1,6 +1,16 @@
-venv/
+# Bytecode files
 __pycache__/
-*.pyc
-*.pkl
-.DS_Store
+*.py[cod]
+
+# Virtual environments
 venv/
+.env/
+.venv/
+
+# OS files
+.DS_Store
+
+# Python packaging
+*.egg-info/
+dist/
+build/
