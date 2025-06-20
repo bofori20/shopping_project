@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About This Project</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      padding: 40px;
+      font-family: "Segoe UI", sans-serif;
+    }
+    .tab-content {
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      border: 1px solid #dee2e6;
+      box-shadow: 0 0 15px rgba(0,0,0,0.05);
+    }
+    .nav-tabs .nav-link.active {
+      background-color: #0d6efd;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2 class="mb-4">🛍️ Customer Shopping Intention Project</h2>
+
+    <ul class="nav nav-tabs" id="projectTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="overview-tab" data-bs-toggle="tab" data-bs-target="#overview" type="button">Overview</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="features-tab" data-bs-toggle="tab" data-bs-target="#features" type="button">Model Features</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="input-tab" data-bs-toggle="tab" data-bs-target="#input" type="button">Input Guide</button>
+      </li>
+    </ul>
+
+    <div class="tab-content mt-3" id="projectTabsContent">
+      <div class="tab-pane fade show active" id="overview" role="tabpanel">
+        <p>This project uses a Keras neural network trained on e-commerce behavioral data to predict whether a customer will make a purchase. The model was trained on the <strong>Online Shoppers Intention Dataset</strong>.</p>
+        <p>It is deployed in a Django web app with a prediction form for user interaction.</p>
+      </div>
+
+      <div class="tab-pane fade" id="features" role="tabpanel">
+        <ul>
+          <li><strong>Administrative</strong>: Number of administrative pages visited</li>
+          <li><strong>Administrative_Duration</strong>: Time spent on admin pages</li>
+          <li><strong>Informational</strong>: Number of informational pages visited</li>
+          <li><strong>Informational_Duration</strong>: Time spent on informational pages</li>
+          <li><strong>ProductRelated</strong>: Product-related pages viewed</li>
+          <li><strong>ProductRelated_Duration</strong>: Time spent on product pages</li>
+          <li><strong>BounceRates</strong>: Bounce rate of session</li>
+          <li><strong>ExitRates</strong>: Exit rate of session</li>
+          <li><strong>PageValues</strong>: Page value estimation</li>
+          <li><strong>SpecialDay</strong>: Closeness to a special day (e.g., holiday)</li>
+          <li><strong>OperatingSystems</strong>: OS type (numeric)</li>
+          <li><strong>Browser</strong>: Browser type (numeric)</li>
+          <li><strong>Region</strong>: User region (numeric)</li>
+          <li><strong>TrafficType</strong>: Source of traffic (numeric)</li>
+          <li><strong>Weekend</strong>: 1 if weekend, else 0</li>
+        </ul>
+      </div>
+
+      <div class="tab-pane fade" id="input" role="tabpanel">
+        <p>Select values in predict form corresponding to the features. The model will return a prediction indicating whether the user is likely to complete a purchase or not.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">🛍️ Shopping Predictor</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link{% if request.path == '/' %} active{% endif %}" href="/">Predict</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link{% if request.path == '/project-info/' %} active{% endif %}" href="/project-info/">About</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+</html>
+
+
+

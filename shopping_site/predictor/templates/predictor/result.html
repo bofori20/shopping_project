@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Prediction Result{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+  <div class="card shadow-lg p-4">
+    <h2 class="text-center mb-4">🧾 Prediction Result</h2>
+
+    {% if prediction %}
+      <div class="alert alert-info text-center fs-4">
+        <strong>{{ prediction }}</strong>
+      </div>
+    {% else %}
+      <div class="alert alert-warning text-center">
+        No prediction was made.
+      </div>
+    {% endif %}
+
+    <div class="text-center mt-4">
+      <a href="{% url 'predict' %}" class="btn btn-primary">Make Another Prediction</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
