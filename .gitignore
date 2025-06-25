@@ -3,9 +3,8 @@ __pycache__/
 *.py[cod]
 
 # Virtual environments
-venv/
-.env/
-.venv/
+.venv
+venv_310
 
 # OS files
 .DS_Store
