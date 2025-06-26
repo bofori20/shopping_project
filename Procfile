@@ -1,2 +1,0 @@
-web: gunicorn shopping_site.wsgi
-
