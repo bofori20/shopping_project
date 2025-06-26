@@ -5,13 +5,12 @@ import requests
 from tensorflow.keras.models import load_model
 
 # Load model
-MODEL_PATH = os.path.join(os.path.dirname(__file__), 'model', 'customer_shopping-intention_model.h5')
-model = load_model(MODEL_PATH)
+#MODEL_PATH = os.path.join(os.path.dirname(__file__), 'model', 'customer_shopping-intention_model.h5')
+#model = load_model(MODEL_PATH)
 
 
-
-#MODEL_URL = "https://github.com/bofori20/shopping_project/releases/tag/v1.0"
-#MODEL_PATH = "model/customer_model.h5"
+MODEL_URL = "https://github.com/bofori20/shopping_project/releases/tag/v1.0"
+MODEL_PATH = 'predictor/model/customer_shopping-intention_model.h5'
 
 def download_model_if_needed():
     if not os.path.exists(MODEL_PATH):
