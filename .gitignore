@@ -2,9 +2,6 @@
 __pycache__/
 *.py[cod]
 
-# Virtual environments
-venv_310
-
 # OS files
 .DS_Store
 
